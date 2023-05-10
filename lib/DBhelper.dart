@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:io' as io;
@@ -8,9 +7,7 @@ import '/UserModel.dart';
 
 
 class DbHelper {
-
   static Database? _db;
-
   //DataBase
   static const String DB_Name = 'StoreData.db';
   static const String Table_User = 'userData';
