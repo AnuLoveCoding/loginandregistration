@@ -67,7 +67,7 @@ class _LoginFormState extends State<LoginForm>{
         title: Text('Login form'),
       ),
        body: Container(
-             child: Column(
+              child: Column(
               children: [
                 Container(
                 margin: EdgeInsets.all(20),
@@ -87,8 +87,8 @@ class _LoginFormState extends State<LoginForm>{
                   ),
                 ),
             Container(
-            margin: EdgeInsets.all(20),
-            child: TextField(
+              margin: EdgeInsets.all(20),
+              child: TextField(
               controller: pass_con,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
