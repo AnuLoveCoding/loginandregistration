@@ -53,8 +53,7 @@ class DbHelper {
   //Login Form
   Future<Usermodel> getLoginPage(String email, String password) async {
     var dbClient = await db; //call the Database(Open the Database)
-    var res = await dbClient.rawQuery(
-        "select * from user where email= '" + email + "' and password='" + password + "'");
+    var res = await dbClient.rawQuery("select * from user where email= '" + email + "' and password='" + password + "'");
      if (res.length > 0) {
       return Usermodel.fromMap(res.first);
     }
