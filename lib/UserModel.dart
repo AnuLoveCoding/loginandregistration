@@ -19,7 +19,6 @@ class Usermodel{
   }
 
 //
-
 Usermodel.fromMap(Map<String, dynamic>map){
     user_id = map['user_id'];
     user_name = map['user_name'];

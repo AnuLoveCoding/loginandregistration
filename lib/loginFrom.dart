@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 import '/DBhelper.dart';
-
-import 'DBhelper.dart';
-
 import 'Singin.dart';
 import 'package:loginandregistration/registratoinPage.dart';
-
-import 'Singin.dart';
-
 
 class LoginForm extends StatefulWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -19,7 +13,6 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm>{
 
   //SharedPreferences sharedPreferences= await SharedPreferences.getInstance();
-
   final email_con=TextEditingController();
   final pass_con=TextEditingController();
   var   dbHelper;
@@ -30,12 +23,9 @@ class _LoginFormState extends State<LoginForm>{
     super.initState();
     dbHelper=DbHelper();
     //get the value from Shared Prefrences.
-
     //Return String
     hh(context);
-
   }
-
   void hh(BuildContext context) async{
 
     //SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -65,11 +55,8 @@ class _LoginFormState extends State<LoginForm>{
       /* }
       else{
 
-
       }*/
     });
-
-
   }
   @override
   Widget build(BuildContext context) {
@@ -77,76 +64,72 @@ class _LoginFormState extends State<LoginForm>{
       backgroundColor: Colors.cyan,
       appBar: AppBar(
         backgroundColor: Colors.greenAccent,
-        title: Text('Login form'),),
-
-      body: Container(
-
-        child: Column(
-          children: [
+        title: Text('Login form'),
+      ),
+       body: Container(
+             child: Column(
+              children: [
+                Container(
+                margin: EdgeInsets.all(20),
+                child: TextField(
+                  controller: email_con,
+                  decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10.0),
+                        ),
+                        filled: true,
+                        hintStyle: TextStyle(color: Colors.grey[800]),
+                        labelText: 'email',
+                        icon: Icon(Icons.format_list_numbered),
+                        iconColor: Colors.blueAccent,
+                        fillColor: Colors.white
+                    ),
+                  ),
+                ),
             Container(
             margin: EdgeInsets.all(20),
             child: TextField(
-              controller: email_con,
+              controller: pass_con,
               decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    filled: true,
-                    hintStyle: TextStyle(color: Colors.grey[800]),
-                    labelText: 'email',
-                    icon: Icon(Icons.format_list_numbered),
-                    iconColor: Colors.blueAccent,
-                    fillColor: Colors.white
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
+                filled: true,
+                hintStyle: TextStyle(color: Colors.grey[800]),
+                fillColor: Colors.white,
+                labelText: 'password',
+                icon: Icon(Icons.drive_file_rename_outline_outlined),
+                iconColor: Colors.blueAccent,
+
               ),
+              obscureText: true,
             ),
-
-      Container(
-        margin: EdgeInsets.all(20),
-        child: TextField(
-          controller: pass_con,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
-            filled: true,
-            hintStyle: TextStyle(color: Colors.grey[800]),
-            fillColor: Colors.white,
-            labelText: 'password',
-            icon: Icon(Icons.drive_file_rename_outline_outlined),
-            iconColor: Colors.blueAccent,
-
           ),
-          obscureText: true,
-        ),
-      ),
-
-      SizedBox(height:5,),
-
-
-
-
-      ElevatedButton(
-          onPressed: (){
-            //sigin;
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
-          },child: Text('Sign in',style: TextStyle(fontWeight: FontWeight.w200,fontSize:20,),
-      )),
-      ElevatedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return Registration_Form();
-            }
-
-            ));
-          }, child: Text('Register For New User',style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),
-      )),
-
-
-      ],
+          SizedBox(height:5,),
+          ElevatedButton(
+              onPressed: (){
+                sigin;
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
+              },
+               child: Text('Sign in',style: TextStyle(fontWeight: FontWeight.w200,fontSize:20,),),
+          ),
+          ElevatedButton(
+              onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) {
+                       return Registration_Form();
+                      }
+                    )
+                );
+              },
+              child:
+                Text('Register For New User',style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),)
+          ),
+        ],
+       ),
     ),
-    ),
-    );
+  );
 
   }
 }
