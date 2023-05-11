@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:loginandregistration/screens/Firstpage.dart';
 import '/DBhelper.dart';
-import 'Singin.dart';
 import 'package:loginandregistration/registratoinPage.dart';
 
 class LoginForm extends StatefulWidget {
@@ -39,7 +39,7 @@ class _LoginFormState extends State<LoginForm>{
       else{
 
       }*/
-      Navigator.push(context, MaterialPageRoute(builder: (context) =>Sign_in()),);
+      Navigator.push(context, MaterialPageRoute(builder: (context) =>firstPage()),);
      }
     );
   }

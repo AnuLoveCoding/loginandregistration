@@ -43,7 +43,7 @@ class DbHelper {
   }
 
   // Login Form //
-  Future<Usermodel> getLoginPage(String email, String password) async {
+  Future <Usermodel> getLoginPage(String email, String password) async {
     var dbClient = await db; //call the Database(Open the Database)
     var res = await dbClient.rawQuery("select * from userData where email= '" + email + "' and password='" + password + "'");
      if (res.length > 0) {

@@ -27,3 +27,12 @@ Usermodel.fromMap(Map<String, dynamic>map){
   }
 }
 
+
+class Modelclass{
+  final String imagee;
+  final String name;
+  
+  Modelclass({required this.name, required this.imagee});
+
+}
+

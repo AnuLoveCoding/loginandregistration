@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginandregistration/screens/Firstpage.dart';
 import '/DBhelper.dart';
 import '/UserModel.dart';
 import 'loginFrom.dart';
@@ -88,7 +89,7 @@ class _Signup_FormState extends State<Registration_Form> {
              SizedBox(height:2,),
              ElevatedButton(
                 onPressed: (){
-                  Signup();
+                  firstPage();
                 },
                 child: Text('Register Yourself', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),),
              ),
