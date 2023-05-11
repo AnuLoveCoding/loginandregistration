@@ -20,6 +20,7 @@ class DbHelper {
   //static const String C_Password='password';
 
 
+  // Create the Database //
   Future<Database> get db async {
     if (_db != null) {
       return _db!;
@@ -35,6 +36,7 @@ class DbHelper {
     return db;
   }
 
+  // Create the Table-Column in DataBase;//
   _onCreate(Database db, int version) async {
     await db.execute(
         "create table userData(user_id TEXT,user_name TEXT,email TEXT,password TEXT,PRIMARY KEY(user_id))");
