@@ -4,6 +4,7 @@ import '/UserModel.dart';
 import 'loginFrom.dart';
 
 class Registration_Form extends StatefulWidget {
+
   @override
   State<Registration_Form> createState() => _Signup_FormState();
 }
@@ -34,14 +35,10 @@ class _Signup_FormState extends State<Registration_Form> {
     Usermodel usermodel = Usermodel(
         user_id: id, user_name: name, user_email: email, user_password: pass);
         await dbhelper.insertadata(usermodel).then((userData) =>
-
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("SucessFully Register"))),
           Navigator.push(context, MaterialPageRoute(builder: (context) => LoginForm()),),
-
-
         ).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
   }
-
 
   Widget controllerid({required String name, required var controller, required IconData icon,}) =>
      Container(
@@ -93,7 +90,6 @@ class _Signup_FormState extends State<Registration_Form> {
                 onPressed: (){
                   Signup();
                 },
-                    //
                 child: Text('Register Yourself', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),),
              ),
             SizedBox(height:4,),
@@ -113,7 +109,6 @@ class _Signup_FormState extends State<Registration_Form> {
                     IconButton(
                       icon: Icon(Icons.facebook,size: 40,color:Colors.white,),
                       onPressed: () {
-
 
                       },
                     ),

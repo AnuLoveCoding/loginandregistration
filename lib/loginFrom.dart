@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import '/DBhelper.dart';
-import 'HomePage.dart';
 import 'Singin.dart';
 import 'package:loginandregistration/registratoinPage.dart';
 
 class LoginForm extends StatefulWidget {
-  const LoginForm({Key? key}) : super(key: key);
 
   @override
   State<LoginForm> createState() => _LoginFormState();
@@ -29,7 +27,7 @@ class _LoginFormState extends State<LoginForm>{
   }
 
   sigin() async{
-    String email=email_con.text;
+    String email = email_con.text;
     String pass=pass_con.text;
     await dbHelper.getLoginPage(email,pass).then((userdata) async {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Sucessfully")));
@@ -41,9 +39,9 @@ class _LoginFormState extends State<LoginForm>{
       else{
 
       }*/
-
       Navigator.push(context, MaterialPageRoute(builder: (context) =>Sign_in()),);
-    });
+     }
+    );
   }
 
   Widget feilds({required String name, required var controller, required IconData icon}){
