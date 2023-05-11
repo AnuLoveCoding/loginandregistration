@@ -29,12 +29,17 @@ class _Signup_FormState extends State<Registration_Form> {
     String name = _conname.text;
     String email = _conemail.text;
     String pass = _conpass.text;
-    String buttton = _conpass.text;
+
 
     Usermodel usermodel = Usermodel(
         user_id: id, user_name: name, user_email: email, user_password: pass);
-        await dbhelper.insertadata(usermodel).then((userData) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("SucessFully Register"))),).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
+        await dbhelper.insertadata(usermodel).then((userData) =>
 
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("SucessFully Register"))),
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginForm()),),
+
+
+        ).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
   }
 
 
@@ -85,7 +90,10 @@ class _Signup_FormState extends State<Registration_Form> {
             ),
              SizedBox(height:2,),
              ElevatedButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => LoginForm()),),
+                onPressed: (){
+                  Signup();
+                },
+                    //
                 child: Text('Register Yourself', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),),
              ),
             SizedBox(height:4,),
@@ -105,6 +113,8 @@ class _Signup_FormState extends State<Registration_Form> {
                     IconButton(
                       icon: Icon(Icons.facebook,size: 40,color:Colors.white,),
                       onPressed: () {
+
+
                       },
                     ),
                   ],

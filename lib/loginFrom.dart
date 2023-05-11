@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/DBhelper.dart';
+import 'HomePage.dart';
 import 'Singin.dart';
 import 'package:loginandregistration/registratoinPage.dart';
 
@@ -25,36 +26,23 @@ class _LoginFormState extends State<LoginForm>{
     dbHelper=DbHelper();
     //get the value from Shared Prefrences.
     //Return String
-    hh(context);
-  }
-  void hh(BuildContext context) async{
-
-    //SharedPreferences prefs = await SharedPreferences.getInstance();
-    //Return String
-    /* String ?stringValue = prefs.getString('e');
-
-    if(stringValue!=null){
-     // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(_)=> Sign_in()), (route) => false);
-
-    }
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(stringValue!)));
-*/
-
   }
 
   sigin() async{
     String email=email_con.text;
     String pass=pass_con.text;
     await dbHelper.getLoginPage(email,pass).then((userdata) async {
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Login Sucessfully")));
       /*if(userdata!=null){*/
       /*   SharedPreferences prefs = await SharedPreferences.getInstance();
         prefs.setString("e", email);*/
-      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(_)=> Sign_in()), (route) => false);
+     // Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder:(_)=> Sign_in()), (route) => false);
       /* }
       else{
 
       }*/
+
+      Navigator.push(context, MaterialPageRoute(builder: (context) =>Sign_in()),);
     });
   }
 
@@ -90,8 +78,8 @@ class _LoginFormState extends State<LoginForm>{
            feilds(name: 'Password', controller: pass_con, icon: (Icons.password)),
           SizedBox(height:5,),
           ElevatedButton( onPressed: (){
-            sigin;
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
+            sigin();
+           // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
             },
             child: Text('Sign in',style: TextStyle(fontWeight: FontWeight.w200,fontSize:20,),),
           ),
