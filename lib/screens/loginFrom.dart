@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loginandregistration/screens/Firstpage.dart';
+import 'package:loginandregistration/screens/registratoinPage.dart';
 import '/DBhelper.dart';
-import 'package:loginandregistration/registratoinPage.dart';
 
 class LoginForm extends StatefulWidget {
 

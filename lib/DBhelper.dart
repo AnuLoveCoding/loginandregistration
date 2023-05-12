@@ -1,10 +1,9 @@
 import 'dart:async';
+import 'package:loginandregistration/screens/UserModel.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:io' as io;
 import 'package:path/path.dart';
-import '/UserModel.dart';
-
 
 class DbHelper {
   static Database? _db;

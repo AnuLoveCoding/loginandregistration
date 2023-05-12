@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loginandregistration/UserModel.dart';
+import 'package:loginandregistration/screens/UserModel.dart';
 
 class Personalities extends StatelessWidget {
   

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:loginandregistration/registratoinPage.dart';
+import 'package:loginandregistration/screens/loginFrom.dart';
 
-import 'loginFrom.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
 
   // This widget is the root of your application.
   @override
@@ -28,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepPurple,
       ),
-      home: LoginForm()
+      home: LoginForm(),
     );
   }
 }
