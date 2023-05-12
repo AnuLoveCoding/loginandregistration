@@ -7,18 +7,18 @@ class Personalities extends StatelessWidget {
   Personalities({required  this.p});
 
   List<Modelclass> prime = [
-    Modelclass(name: 'Narender Modi', imagee: '../images'),
-    Modelclass(name: 'Atal Bihari Vajypee', imagee: '../images/'),
+    Modelclass(name: 'Narender Modi', imagee: '../images/modi.jpg'),
+    Modelclass(name: 'Atal Bihari Vajypee', imagee: '../images/atal.jpg'),
   ];
 
   List<Modelclass> doc = [
-    Modelclass(name: 'Harsh Vardhan', imagee: '../images/'),
-    Modelclass(name: 'Mansukh Mandviyua', imagee: '../images/'),
+    Modelclass(name: 'Harsh Vardhan', imagee: '../images/vardhan.jpg'),
+    Modelclass(name: 'Mansukh Mandviyua', imagee: '../images/mansukh.jpg'),
   ];
 
   List<Modelclass> actor = [
-    Modelclass(name: 'Salman Khan', imagee: '../images/'),
-    Modelclass(name: 'Akshay Kumar', imagee: '../images/'),
+    Modelclass(name: 'Salman Khan', imagee: '../images/salman.jpg'),
+    Modelclass(name: 'Akshay Kumar', imagee: '../images/akshay.jpg'),
   ];
 
   @override
