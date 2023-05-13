@@ -4,6 +4,7 @@ import 'package:loginandregistration/screens/personalities.dart';
 class firstPage extends StatelessWidget {
 
   List<String> namelist = ['Prime Minister\'s', 'Doctor\'s', 'Actor\'s'];
+  List<String> ima = ['images/modi.jpg', 'images/vardhan.jpg', 'images/AkshayKumar.jpg'];
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class firstPage extends StatelessWidget {
               return InkWell(
                 onTap: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return Personalities(p : pos);
+                    return Personalities(p: pos);
                   }));
                 },
                 child:  Container(
@@ -48,7 +49,17 @@ class firstPage extends StatelessWidget {
                                 width: 5.0
                             ),
                           ),
-                          child: Center(child: Text(namelist[pos],style:TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)))
+                              //  child:
+                                    /*Column(
+                                    children: [
+                                      Image(image: AssetImage(ima[pos])),
+                                      Text(namelist[pos]),
+                                    ],
+                                  )*/
+                       child : Center(child: Text(namelist[pos],style:TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)))
+                          // Image(image: AssetImage(ima[pos])),
+                          // Text(namelist[pos]),
+                          // SizedBox(height: 10.0,)
                       ),
                     ],
                   ),

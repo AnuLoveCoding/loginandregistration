@@ -70,8 +70,6 @@ class _LoginFormState extends State<LoginForm>{
         title: Text('Login form'),
       ),
        body: Column(
-         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
            feilds(name: 'E_mail', controller: email_con, icon: (Icons.format_list_numbered)),
            feilds(name: 'Password', controller: pass_con, icon: (Icons.password)),
