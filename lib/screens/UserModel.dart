@@ -25,6 +25,7 @@ Usermodel.fromMap(Map<String, dynamic>map){
     user_email = map['email'];
     user_password = map['password'];
   }
+  
 }
 
 
