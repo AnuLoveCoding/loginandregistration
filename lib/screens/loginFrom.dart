@@ -39,7 +39,7 @@ class _LoginFormState extends State<LoginForm>{
       else{
 
       }*/
-      Navigator.push(context, MaterialPageRoute(builder: (context) =>firstPage()),);
+         Navigator.pushNamed(context, '/details');
      }
     );
   }
