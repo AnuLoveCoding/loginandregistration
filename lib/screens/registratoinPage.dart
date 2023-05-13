@@ -43,11 +43,12 @@ class _Signup_FormState extends State<Registration_Form> {
         }).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
   }
 
-  Widget controllerid({required String name, required var controller, required IconData icon,}) =>
+  Widget controllerid({required String name, required var controller, required IconData icon, required bool obscureText}) =>
      Container(
         margin: EdgeInsets.all(20),
         child: TextField(
         controller: controller,
+        obscureText: obscureText,
         decoration: InputDecoration(
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10.0),
@@ -64,28 +65,22 @@ class _Signup_FormState extends State<Registration_Form> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.greenAccent,
-        resizeToAvoidBottomInset: false,
         appBar: AppBar(
-          backgroundColor: Colors.green[200],
+          centerTitle: true,
           title: Center(child: Text('Registation Page',style: TextStyle(color:Colors.white,fontWeight: FontWeight.bold),)),
         ),
-        body:Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage('images/car.jpg'),fit: BoxFit.cover)
-          ),
-          child: Column(
+        body: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-             controllerid(name: 'id', controller: _conid, icon: (Icons.format_list_numbered)),
-             controllerid(name: 'Your Name', controller: _conname, icon: (Icons.drive_file_rename_outline_outlined)),
-             controllerid(name: 'E_mail', controller: _conemail, icon: (Icons.email)),
-             controllerid(name: 'Password', controller: _conpass, icon: (Icons.password_outlined)),
+             controllerid(name: 'id', controller: _conid, icon: (Icons.format_list_numbered),obscureText: false),
+             controllerid(name: 'Your Name', controller: _conname, icon: (Icons.drive_file_rename_outline_outlined),obscureText: false),
+             controllerid(name: 'E_mail', controller: _conemail, icon: (Icons.email),obscureText: false),
+             controllerid(name: 'Password', controller: _conpass, icon: (Icons.password_outlined),obscureText: true),
             Container(
                 margin: EdgeInsets.all(20),
                 child: Text('Welcome Back to app',style: TextStyle(fontSize: 20,fontWeight:
-                FontWeight.bold,color: Colors.white,shadows: [Shadow(color: Colors.cyan,)]),
+                FontWeight.bold,color: Colors.black,shadows: [Shadow(color: Colors.cyan,)]),
                 )
             ),
              SizedBox(height:2,),
@@ -129,7 +124,6 @@ class _Signup_FormState extends State<Registration_Form> {
             ),
            ],
           ),
-        )
     );
   }
 }

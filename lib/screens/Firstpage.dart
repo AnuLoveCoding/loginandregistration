@@ -25,31 +25,33 @@ class firstPage extends StatelessWidget {
                     return Personalities(p : pos);
                   }));
                 },
-                child:  Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.all(20.0),
-                      constraints: BoxConstraints.expand(width: double.infinity,height: 100.0),
-                      decoration: BoxDecoration(
-                        image: DecorationImage(image: AssetImage('images/flag.jpg')),
-                      ),
-                    ),
-                    SizedBox(height: 10.0,),
-                    Container(
-                        width: double.infinity,
-                        height: 150.0,
+                child:  Container(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.all(20.0),
+                        constraints: BoxConstraints.expand(width: double.infinity,height: 100.0),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                          border: Border.all(
-                              color: Colors.deepOrange,
-                              width: 5.0
-                          ),
+                          image: DecorationImage(image: AssetImage('images/flag.jpg')),
                         ),
-                        child: Center(child: Text(namelist[pos],style:TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)))
-                    ),
-                  ],
+                      ),
+                      SizedBox(height: 10.0,),
+                      Container(
+                          width: double.infinity,
+                          height: 150.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                            border: Border.all(
+                                color: Colors.deepOrange,
+                                width: 5.0
+                            ),
+                          ),
+                          child: Center(child: Text(namelist[pos],style:TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)))
+                      ),
+                    ],
+                  ),
                 ),
               );
             }
