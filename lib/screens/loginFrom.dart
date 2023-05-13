@@ -76,7 +76,7 @@ class _LoginFormState extends State<LoginForm>{
            feilds(name: 'Password', controller: pass_con, icon: (Icons.password)),
           SizedBox(height:5,),
           ElevatedButton( onPressed: (){
-            sigin();
+             sigin();
            // ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Registered")));
             },
             child: Text('Sign in',style: TextStyle(fontWeight: FontWeight.w200,fontSize:20,),),

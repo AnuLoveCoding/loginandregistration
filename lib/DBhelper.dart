@@ -35,9 +35,9 @@ class DbHelper {
   }
 
   // Insert Data into Database //
-  Future<int> insertadata(Usermodel userData) async {
+  Future<int> insertadata(Usermodel model) async {
     var dbClient = await db;
-    var result = await dbClient.insert("userData", userData.toMap());
+    var result = await dbClient.insert("userData", model.toMap());
     return result;
   }
 

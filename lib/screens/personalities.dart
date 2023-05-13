@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:loginandregistration/screens/UserModel.dart';
 
 class Personalities extends StatelessWidget {
-  
+
   final int p;
+
   Personalities({required  this.p});
 
   List<Modelclass> prime = [
@@ -17,74 +18,87 @@ class Personalities extends StatelessWidget {
   ];
 
   List<Modelclass> actor = [
-    Modelclass(name: 'Salman Khan', imagee: 'images/salman.jpg'),
-    Modelclass(name: 'Akshay Kumar', imagee: 'images/akshay.jpg'),
+    Modelclass(name: 'Salman Khan', imagee: 'images/salmankhan.jpg'),
+    Modelclass(name: 'Akshay Kumar', imagee: 'images/AkshayKumar.jpg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(
-        backgroundColor: Color(0xff3a3e3e),
-        title: Text('Personalities'.toUpperCase(),style: TextStyle(color: Colors.white),),
-        centerTitle: true,
-      ),
+        appBar: AppBar(
+          backgroundColor: Color(0xff3a3e3e),
+          title: Text('Personalities'.toUpperCase(),style: TextStyle(color: Colors.white),),
+          centerTitle: true,
+        ),
 
-      body: Column(
-        children: [
-          if(p == 0)...[
-            Expanded(
+        body: Column(
+          children: [
+            if(p == 0)...[
+              Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(20.0),
+                    padding: EdgeInsets.all(20.0),
+                    child: ListView.builder(
+                        itemCount: prime.length,
+                        itemBuilder: (BuildContext context, int pos){
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image(image: AssetImage(prime[pos].imagee),width: double.infinity,height: 200.0,),
+                              Text(prime[pos].name),
+                              SizedBox(height: 20.0,),
+                            ],
+                          );
+                        }
+                    ),
+                  )
+              ),
+            ]else if(p == 1)...[
+              Expanded(
                 child: Container(
-                  child: ListView.builder(
-                      itemCount: prime.length,
-                      itemBuilder: (BuildContext context, int pos){
-                        return Column(
-                          children: [
-                            Image(image: AssetImage(prime[pos].imagee),),
-                            Text(prime[pos].name)
-                          ],
-                        );
-                      }
-                  ),
-
-                )
-            ),
-          ]else if(p == 1)...[
-            Expanded(
-                child: Container(
+                  margin: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: ListView.builder(
                       itemCount: doc.length,
                       itemBuilder: (BuildContext context, int pos){
                         return Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Image(image: AssetImage(doc[pos].imagee),),
-                            Text(doc[pos].name)
+                            Image(image: AssetImage(doc[pos].imagee),width: double.infinity,height: 200.0,),
+                            Text(doc[pos].name),
+                            SizedBox(height: 20.0,)
                           ],
                         );
                       }
                   ),
                 ),
-            ),
-          ] else if(p == 2)...[
-            Expanded(
+              ),
+            ] else if(p == 2)...[
+              Expanded(
                 child: Container(
+                  margin: EdgeInsets.all(20.0),
+                  padding: EdgeInsets.all(20.0),
                   child: ListView.builder(
                       itemCount: actor.length,
                       itemBuilder: (BuildContext context , int pos){
                         return Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                              Image(image: AssetImage(actor[pos].name)),
-                              Text(actor[pos].name),
+                            Image(image: AssetImage(actor[pos].imagee,),width: double.infinity,height: 200.0,),
+                            Text(actor[pos].name),
+                            SizedBox(height: 20.0,)
                           ],
                         );
-                     }
+                      }
                   ),
                 ),
-            ),
-
+              ),
+            ],
           ],
-        ],
-      )
+        )
     );
   }
 }

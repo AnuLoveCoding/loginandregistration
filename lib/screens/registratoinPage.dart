@@ -36,10 +36,11 @@ class _Signup_FormState extends State<Registration_Form> {
 
     Usermodel usermodel = Usermodel(
         user_id: id, user_name: name, user_email: email, user_password: pass);
-        await dbhelper.insertadata(usermodel).then((userData) =>
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("SucessFully Register"))),
-          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginForm()),),
-        ).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
+        await dbhelper.insertadata(usermodel).then((user) {
+          ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Sucessfully Register")));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginForm()));
+        }).catchError((error) => ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Data Failed"))));
   }
 
   Widget controllerid({required String name, required var controller, required IconData icon,}) =>
@@ -90,7 +91,7 @@ class _Signup_FormState extends State<Registration_Form> {
              SizedBox(height:2,),
              ElevatedButton(
                 onPressed: (){
-                  firstPage();
+                 Signup();
                 },
                 child: Text('Register Yourself', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 20,),),
              ),
