@@ -4,7 +4,6 @@ import 'package:loginandregistration/screens/personalities.dart';
 class firstPage extends StatelessWidget {
 
   List<String> namelist = ['Prime Minister\'s', 'Doctor\'s', 'Actor\'s'];
-  List<String> ima = ['images/modi.jpg', 'images/vardhan.jpg', 'images/AkshayKumar.jpg'];
 
   @override
   Widget build(BuildContext context) {
@@ -15,29 +14,28 @@ class firstPage extends StatelessWidget {
         title: Text('Categories of Personlaties'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: ListView.builder(
-            itemCount: namelist.length,
-            itemBuilder: (BuildContext context ,int pos){
-              //  Replace with Gesturedectore and use InkWell;
-              return InkWell(
-                onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return Personalities(p: pos);
-                  }));
-                },
-                child:  Container(
-                  child: Column(
+        padding: const EdgeInsets.all(8.0),
+          child: ListView.builder(
+              itemCount: namelist.length,
+              itemBuilder: (BuildContext context ,int pos){
+                //  Replace with Gesturedectore and use InkWell;
+                return InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return Personalities(p: pos);
+                    }));
+                  },
+                  child:  Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Container(
-                        margin: EdgeInsets.all(20.0),
-                        constraints: BoxConstraints.expand(width: double.infinity,height: 100.0),
-                        decoration: BoxDecoration(
-                          image: DecorationImage(image: AssetImage('images/flag.jpg')),
-                        ),
-                      ),
+                      // Container(
+                      //   margin: EdgeInsets.all(20.0),
+                      //   constraints: BoxConstraints.expand(width: double.infinity,height: 100.0),
+                      //   decoration: BoxDecoration(
+                      //     image: DecorationImage(image: AssetImage('images/flag.jpg')),
+                      //   ),
+                      // ),
                       SizedBox(height: 10.0,),
                       Container(
                           width: double.infinity,
@@ -49,13 +47,6 @@ class firstPage extends StatelessWidget {
                                 width: 5.0
                             ),
                           ),
-                              //  child:
-                                    /*Column(
-                                    children: [
-                                      Image(image: AssetImage(ima[pos])),
-                                      Text(namelist[pos]),
-                                    ],
-                                  )*/
                        child : Center(child: Text(namelist[pos],style:TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold)))
                           // Image(image: AssetImage(ima[pos])),
                           // Text(namelist[pos]),
@@ -63,11 +54,11 @@ class firstPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                ),
-              );
-            }
+                );
+              }
+          ),
         ),
-      ),
+
     );
   }
 }
